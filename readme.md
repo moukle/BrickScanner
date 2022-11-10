@@ -89,6 +89,8 @@ After installation, check if the application is executable from command line via
    LDView
    ```
 
+You can use [this](https://gist.github.com/moukle/4e1fd0c4d715dbd784915a8afaea1048) script to install `LDView`, `LDraw` and dependencies on Void Linux.
+
 ### Installation
 1. Clone the repo
    ```sh
@@ -119,6 +121,23 @@ After installation, check if the application is executable from command line via
    This will start the conversion of each brick. Each model from `BRICK_DIR` is opened with the LDView application, 
 converted to the STL format and stored in `STL_DIR`. This progress can take some time and requires approximately 2GB
 of memory.
+
+#### Poetry
+1. Install `poetry` with
+    ```sh
+    curl -sSL https://install.python-poetry.org | python3 -
+    ```
+2. Install `python3.8.15` with
+    ```sh
+    curl https://pyenv.run | bash
+    pyenv install -v 3.8.15
+    ```
+3. Create `STL` files
+    ```sh
+    poetry init
+    poetry env use python3.8
+    poetry poe stl
+    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
