@@ -10,10 +10,11 @@ readme = "README.md"
 
 [tool.poe.tasks]
 stl = "poetry run python scripts/create_stl_files.py"
-help = "Create the STL files"
+demo_stl = "poetry run python scripts/create_demo_stl_files.py"
+# help = "Create the STL files"
 
 [tool.poetry.dependencies]
-python = "3.8.15"
+python = "3.8.16"
 addict = "2.4.0"
 anyio = "3.5.0"
 argon2-cffi = "21.3.0"

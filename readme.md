@@ -131,11 +131,14 @@ of memory.
     ```sh
     curl https://pyenv.run | bash
     pyenv install -v 3.8.15
+
+    poetry init
+    poetry env use python3.8
     ```
 3. Create `STL` files
     ```sh
-    poetry init
-    poetry env use python3.8
+    poetry install
+    poetry self add 'poethepoet[poetry_plugin]'
     poetry poe stl
     ```
 
