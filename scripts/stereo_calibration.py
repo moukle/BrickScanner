@@ -148,8 +148,9 @@ if __name__ == "__main__":
     cell_width = 0.578  # in cm
     c_size = (6, 8)
 
-    img_path = [f"{IMG_DIR}/real_data/220826-150941_calib"]  # directory of image data
+    img_path = [f"{IMG_DIR}/230223-171954"]  # directory of image data
     folder_name = "real_setup/setup_A"
     path = f"{DATA_DIR}/{folder_name}"  # directory of calibration data
 
     calibrate_stereo_setup(path, cell_width, c_size, img_path=img_path)
+    # calibrate_stereo_setup(path, cell_width, c_size, img_path=None)

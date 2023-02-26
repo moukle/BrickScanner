@@ -43,6 +43,7 @@ def main():
             if stream:
                 if stream_is_running:
                     print("Stopped stream")
+                    # stream = False
                     # save buffer
                     for pair in buffer:
                         append_img_pair(img_dir, *pair)

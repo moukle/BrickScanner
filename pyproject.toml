@@ -11,6 +11,7 @@ readme = "README.md"
 [tool.poe.tasks]
 stl = "poetry run python scripts/create_stl_files.py"
 demo_stl = "poetry run python scripts/create_demo_stl_files.py"
+demo = "poetry run python demo.py"
 # help = "Create the STL files"
 
 [tool.poetry.dependencies]
