@@ -48,7 +48,7 @@ def calibrate_stereo_setup(
         # create image directory
         image_path = new_stereo_img_dir(suffix="calib")
 
-        cam = StereoCam(frame_rate=30, resolution=(320, 240))
+        cam = StereoCam(frame_rate=30, resolution=(720, 480))
 
         print("Start main loop")
         while True:
@@ -104,6 +104,8 @@ def calibrate_stereo_setup(
                     img_points_right.append(corners_2)
                 else:
                     print(f"Warning: No checkerboard found in {file_name}")
+                    os.remove(f"{img_path}/left/{file_name}")
+                    os.remove(f"{img_path}/right/{file_name}")
 
     print("Start calibration? (y/n)")
     inp = input(">> ")
@@ -148,9 +150,12 @@ if __name__ == "__main__":
     cell_width = 0.578  # in cm
     c_size = (6, 8)
 
-    img_path = [f"{IMG_DIR}/230223-171954"]  # directory of image data
-    folder_name = "real_setup/setup_A"
+    img_path = [f"{IMG_DIR}/checkerboard"]  # directory of image data
+    folder_name = "real_setup/setup_C"
     path = f"{DATA_DIR}/{folder_name}"  # directory of calibration data
+
+    if not os.path.isdir(path):
+        os.makedirs(path)
 
     calibrate_stereo_setup(path, cell_width, c_size, img_path=img_path)
     # calibrate_stereo_setup(path, cell_width, c_size, img_path=None)

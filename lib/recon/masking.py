@@ -111,7 +111,7 @@ def red_light_mask(
     gap_idcs_tmp = np.full((gap_idcs.shape[0], gap_window + 1), np.array([gap_idcs]).T)
     gap_idcs = np.unique((gap_idcs_tmp + window_range).flatten())
     gap_idcs = gap_idcs[gap_idcs >= 0]
-    mask[gap_idcs, :] = 0.0  # fill this rows with zero
+    # mask[gap_idcs, :] = 0.0  # fill this rows with zero
 
     # Value is multiplied with the mask to have higher values at the center of the laser line
     hsv = hsv / 255

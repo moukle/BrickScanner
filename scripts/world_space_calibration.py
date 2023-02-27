@@ -219,8 +219,8 @@ if __name__ == "__main__":
     center_point = (5, 2)
     ref_idx = 1
 
-    img_path = f"{IMG_DIR}/230223-171954"  # directory of image data
-    folder_name = "real_setup/setup_A"
+    img_path = f"{IMG_DIR}/checkerboard"  # directory of image data
+    folder_name = "real_setup/setup_C"
     path = f"{DATA_DIR}/{folder_name}"  # directory of calibration data
 
     world_calib_app(path, cell_width, c_size, center_point=center_point, ref_idx=ref_idx, img_path=img_path)

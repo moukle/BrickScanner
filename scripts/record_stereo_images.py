@@ -24,7 +24,7 @@ def main():
     img_dir = new_stereo_img_dir()
 
     # init cameras
-    cam = StereoCam(frame_rate=60, resolution=(160, 120))
+    cam = StereoCam(frame_rate=30, resolution=(720, 480))
 
     print("Start main loop")
     stream_is_running = False
