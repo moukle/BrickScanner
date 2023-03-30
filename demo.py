@@ -17,10 +17,10 @@ from scripts.sim_recon_setup import double_side_recon
 
 if __name__ == "__main__":
     # define directory for epipolar geometry data and reconstructed point cloud
-    # data_dir = f"{DATA_DIR}/real_setup/setup_B"
-    data_dir = f"{DATA_DIR}/demo"
+    data_dir = f"{DATA_DIR}/real_setup/setup_D"
+    # data_dir = f"{DATA_DIR}/demo"
     # define directory for the stereo image pairs
-    img_dir = f"{IMG_DIR}/demo"
+    img_dir = f"{IMG_DIR}/3010"
     # select a brick by its LDraw ID
     # brick_id = "3039"  # 3001
     brick_id = "3010"  # 3001
