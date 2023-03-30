@@ -57,7 +57,10 @@ def main():
     pc.points = o3d.utility.Vector3dVector(points)
 
     # compare with all defined bricks
-    min: tuple[str, int] = ("", np.inf)
+    class Min:
+        val = np.inf
+        id  = ""
+
     for B in Brick().all_bricks():
         mesh, pc_gt, *_, brick_id = B
         pc.points = o3d.utility.Vector3dVector(points)
@@ -76,8 +79,9 @@ def main():
         mean_dist = np.mean(pc.compute_point_cloud_distance(pc_gt))
         print(f"Mean distance to {brick_id}: {mean_dist}")
 
-        if mean_dist <= min[1]:
-            min = (brick_id, mean_dist)
+        if mean_dist <= Min.val:
+            Min.val = mean_dist
+            Min.id  = brick_id
 
         draw = False
         if draw:
@@ -85,9 +89,9 @@ def main():
             o3d.visualization.draw_geometries([mesh, pc], mesh_show_wireframe=True, left=400)
     
     # display best result
-    print(f"Best result with brick {min[0]} ({min[1]})")
+    print(f"Best result with brick {Min.id} ({Min.val})")
 
-    mesh, pc_gt, *_ = Brick()[min[0]]
+    mesh, pc_gt, *_ = Brick()[Min.id]
     pc.points = o3d.utility.Vector3dVector(points)
 
     T = icp(pc, pc_gt)
