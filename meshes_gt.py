@@ -27,6 +27,8 @@ class Brick:
 
         if brick_id in self.brick_ids:
             getattr(self, f"b{brick_id}")()
+            self.pc_gt = self.mesh.sample_points_uniformly(1_000_000)
+
             return self.mesh, self.pc_gt, self.step, self.n_p, self.r, self.z_offset, brick_id
         else:
             raise Exception(f"Brick {brick_id} not found")
@@ -41,8 +43,6 @@ class Brick:
         mesh.scale(1.6, np.zeros(3))
         mesh.rotate(rot_mat((0., 0., 1.), 90), mesh.get_center())
         mesh.translate(np.array([1.6, -2.4, 0.2]))
-
-        self.pc_gt = mesh.sample_points_uniformly(100_000)
         self.mesh = mesh
 
     def b3010(self):
@@ -56,7 +56,6 @@ class Brick:
         # mesh.translate(np.array([0.5, -2.5, 0.1]))
         mesh.translate(np.array([1.6, -2.5, 0.1]))
 
-        self.pc_gt = mesh.sample_points_uniformly(100_000)
         self.mesh = mesh
 
         self.z_offset = 0.5
