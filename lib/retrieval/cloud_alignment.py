@@ -210,6 +210,9 @@ def find_model(
     errors = []
     transformations = []
     for file in files:
+        if not os.path.exists(f"{STL_DIR}/{file}"):
+            print(f"Warning: {file} does not exist (skipping)")
+            continue
         # convert model to point cloud
         mesh = o3d.io.read_triangle_mesh(f"{STL_DIR}/{file}")
         pc_control: o3d.geometry.PointCloud = mesh.sample_points_uniformly(100_000)
