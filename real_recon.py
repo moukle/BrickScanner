@@ -13,7 +13,7 @@ from definitions import *
 from lib.recon.reconstruction import reconstruct_point_cloud
 import open3d as o3d
 
-from meshes_gt import Brick
+from real_meshes import Brick
 
 
 def icp(pc_source, pc_target):

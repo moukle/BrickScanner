@@ -75,6 +75,12 @@ models for point cloud registration and alignment quality measure.
 <!-- GETTING STARTED -->
 ## Getting Started
 
+**Recommended**:
+You can use [this](https://github.com/moukle/LegoSortMachine) repository.
+It conveniently packages all the necessary libraries within a Docker Image that is ready for immediate use.
+
+Alternatively, you can follow the steps outlined below if you prefer not to use the provided Docker Image.
+
 ### Prerequisites
 
 This project uses the detailed brick models, provided by the [LDraw](https://www.ldraw.org/) community. 
@@ -196,7 +202,14 @@ bricks gives an estimate for the brick ID.
 
 ## 3D Reconstruction from real Image Pairs
 
-WIP
+```sh
+./scripts/stereo_calibration.py
+./scripts/world_space_calibration.py
+./scripts/record_stereo_images.py
+
+# unfinished script
+./real_recon.py
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
