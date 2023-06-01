@@ -24,7 +24,7 @@ def main():
     img_dir = new_stereo_img_dir()
 
     # init cameras
-    cam = StereoCam(frame_rate=60, resolution=(160, 120))
+    cam = StereoCam(idcs=(0,2), frame_rate=30, resolution=(720, 480))
 
     print("Start main loop")
     stream_is_running = False
@@ -43,6 +43,7 @@ def main():
             if stream:
                 if stream_is_running:
                     print("Stopped stream")
+                    # stream = False
                     # save buffer
                     for pair in buffer:
                         append_img_pair(img_dir, *pair)

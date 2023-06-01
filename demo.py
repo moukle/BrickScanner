@@ -23,6 +23,11 @@ if __name__ == "__main__":
     # select a brick by its LDraw ID
     brick_id = "3039"  # 3001
 
+    # real imag testing
+    # data_dir = f"{DATA_DIR}/real_setup/setup_D"
+    # img_dir = f"{IMG_DIR}/3010"
+    # brick_id = "3010"  # 3001
+
     # settings for image generation and 3D reconstruction
     settings = dict(
         automated=True,  # if True, image generation starts and stops automatically

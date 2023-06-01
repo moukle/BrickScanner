@@ -20,7 +20,7 @@ class StereoCam:
 
     def __init__(
         self,
-        idcs: Tuple[int, int] = (2, 0),
+        idcs: Tuple[int, int] = (0, 2),
         name="StereoCam",
         *args,
         **kwargs,
